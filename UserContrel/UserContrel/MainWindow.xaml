@@ -1,0 +1,17 @@
+﻿<Window x:Class="UserContrel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:UserContrel"
+        mc:Ignorable="d"
+        Title="User control Это круто" Height="450" Width="1000">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <local:RhombusControl Header="1 картинка" Description="Самое крутое описание 1 картинки" ColoredSource="Resources/1.jpg"/>
+            <local:RhombusControl Header="2 картинка" Description="Самое крутое описание 2 картинки" ColoredSource="Resources/2.jpg"/>
+            <local:RhombusControl Header="3 картинка" Description="Самое крутое описание 3 картинки" ColoredSource="Resources/3.jpg"/>
+            <local:RhombusControl Header="4 картинка" Description="Самое крутое описание 4 картинки" ColoredSource="Resources/4.png"/>
+        </StackPanel>
+    </Grid>
+</Window>
