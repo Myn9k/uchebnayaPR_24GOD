@@ -118,3 +118,5 @@ D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\CabinetUser.g.cs
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\CabinetUser.baml
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\CabinetAdmin.g.cs
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\CabinetAdmin.baml
+D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\bin\Debug\Newtonsoft.Json.dll
+D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\bin\Debug\Newtonsoft.Json.xml
