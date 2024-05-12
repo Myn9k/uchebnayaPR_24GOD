@@ -52,10 +52,23 @@ namespace AppUser
                     authUser = db.Users.Where(b => b.Login == login && b.Pass == pass1).FirstOrDefault();
                 }
 
-                if (authUser != null) 
-                    MessageBox.Show("Всё ок");
+                if (authUser != null)
+                {
+                    CabinetUser cabinetUser = new CabinetUser();
+                    cabinetUser.GetIdUser(authUser.id);
+                    cabinetUser.Show();
+                    this.Close();
+
+                }
                 else MessageBox.Show("Данные введены некорректно");
             }
+        }
+
+        private void Button_REG_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWin = new MainWindow();
+            mainWin.Show();
+            this.Close();
         }
     }
 }

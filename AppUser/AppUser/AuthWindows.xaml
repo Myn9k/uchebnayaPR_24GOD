@@ -15,7 +15,7 @@
             <StackPanel>
                 <TextBlock Text="Авторизация!" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" Margin="0 0 0 20"/>
                 <Grid>
-                    <Button HorizontalAlignment="Left" Content="Регистрация" Margin="0 0 0 20"/>
+                    <Button HorizontalAlignment="Left" Content="Регистрация" Margin="0 0 0 20" Click="Button_REG_Click"/>
                     <Button HorizontalAlignment="Right" Content="Войти" Margin="0 0 0 20" Style="{StaticResource MaterialDesignFlatButton}"/>
                 </Grid>
                 <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>

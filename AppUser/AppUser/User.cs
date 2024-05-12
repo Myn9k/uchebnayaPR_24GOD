@@ -10,7 +10,7 @@ namespace AppUser
     {
         public int id { get; set; }
 
-        private string login, pass, email;
+        private string login, pass, email, birthdaydate, fio;
         public string Login
         {
             get { return login; }
@@ -26,12 +26,25 @@ namespace AppUser
             get { return email; }
             set { email = value; }
         }
+
+        public string BirthdayDate
+        {
+            get { return birthdaydate; }
+            set { birthdaydate = value; }
+        }
+        public string FIO
+        {
+            get { return fio; }
+            set { fio = value; }
+        }
         public User() { }
-        public User(string login, string pass, string email)
+        public User(string login, string pass, string email, string birthdaydate, string fIO)
         {
             this.login = login;
             this.pass = pass;
             this.email = email;
+            this.birthdaydate = birthdaydate;
+            this.FIO = fIO;
         }
     }
 }

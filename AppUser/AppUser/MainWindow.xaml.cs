@@ -21,18 +21,10 @@ namespace AppUser
     public partial class MainWindow : Window
     {
         ApplicationContext db;
+        AuthWindows authWin = new AuthWindows();
         public MainWindow()
         {
             InitializeComponent();
-            db = new ApplicationContext();
-
-            List<User> users = db.Users.ToList();
-            string str = "";
-            foreach (User user in users) 
-            {
-                str += "Login" + user.Login + "|";
-            }
-            exampletext.Text = str;
 
         }
 
@@ -42,8 +34,10 @@ namespace AppUser
             string pass1 = passbox1.Password.Trim();
             string pass2 = passbox2.Password.Trim();
             string email = TextBoxEmail.Text.Trim().ToLower();
+            string birthday = birthdayDatePicker.Text.Trim();
+            string fio = TextBoxFIO.Text.Trim();
 
-            if(login.Length < 5)
+            if (login.Length < 5)
             {
                 TextBoxLogin.ToolTip = "Это поле введено не корректно";
                 TextBoxLogin.Background = Brushes.DarkRed;
@@ -68,6 +62,16 @@ namespace AppUser
                 TextBoxEmail.ToolTip = "Это поле введено не корректно";
                 TextBoxEmail.Background = Brushes.DarkRed;
             }
+            else if (birthday.Length < 5 || !birthday.Contains("."))
+            {
+                birthdayDatePicker.ToolTip = "Это поле введено не корректно";
+                birthdayDatePicker.Background = Brushes.DarkRed;
+            }
+            else if (fio.Length < 5 || !fio.Contains(" "))
+            {
+                TextBoxFIO.ToolTip = "Это поле введено не корректно";
+                TextBoxFIO.Background = Brushes.DarkRed;
+            }
             else
             {
                 TextBoxLogin.ToolTip = "";
@@ -78,19 +82,23 @@ namespace AppUser
                 passbox2.Background = Brushes.Transparent;
                 TextBoxEmail.ToolTip = "";
                 TextBoxEmail.Background = Brushes.Transparent;
-
-                User user = new User(login, pass1, email);
+                birthdayDatePicker.ToolTip = "";
+                birthdayDatePicker.Background = Brushes.Transparent;
+                TextBoxFIO.ToolTip = "";
+                TextBoxFIO.Background = Brushes.Transparent;
+                User user = new User(login, pass1, email, birthday, fio);
 
                 db.Users.Add(user);
-                db.SaveChanges();   
+                db.SaveChanges();
+                authWin.Show();
+                this.Close();
 
             }
         }
 
         private void AuthButton(object sender, RoutedEventArgs e)
         {
-            AuthWindows authwin = new AuthWindows();
-            authwin.Show();
+            authWin.Show();
             this.Close();
         }
     }

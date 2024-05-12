@@ -114,3 +114,5 @@ D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\AppUser.exe
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\AppUser.pdb
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\AuthWindows.g.cs
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\AuthWindows.baml
+D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\CabinetUser.g.cs
+D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\CabinetUser.baml
