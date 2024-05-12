@@ -68,6 +68,7 @@ namespace AppUser
                         {
                             CabinetUser cabinetUser = new CabinetUser();
                             cabinetUser.GetIdUser(authUser.id);
+                            cabinetUser.USERID = authUser.id;
                             cabinetUser.Show();
                             this.Close();
                         }

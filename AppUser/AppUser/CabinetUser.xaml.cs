@@ -10,14 +10,14 @@ namespace AppUser
     public partial class CabinetUser : Window
     {
         ApplicationContext db;
+        public int USERID { get; set; }
 
         public CabinetUser()
         {
             InitializeComponent();
             LoadEvents();
         }
-
-        public void GetIdUser(int Id)
+        public void GetIdUser(int id)
         {
             db = new ApplicationContext();
 
@@ -25,12 +25,13 @@ namespace AppUser
             string strUser = "";
             foreach (User user in users)
             {
-                if (user.id == Id)
+                if (user.id == id)
                 {
                     strUser += $"Логин: {user.Login}" + $"\n ФИО: {user.FIO}" + $"\n Почта: {user.Email}" + $"\n Дата рождения: {user.BirthdayDate}";
                 }
             }
             LoginUser.Text = strUser;
+            
         }
         public class Event
         {
@@ -71,5 +72,27 @@ namespace AppUser
             LoadEvents();
             MessageBox.Show("Событие сохранено.");
         }
+
+        private void SaveEmailButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            string newEmail = NewEmailTextBox.Text;
+            int userId = USERID;
+            UpdateUserEmail(userId, newEmail);
+            MessageBox.Show("Email адрес успешно изменен.");
+        }
+
+        private void UpdateUserEmail(int userId, string newEmail)
+        {
+            db = new ApplicationContext();
+            User user = db.Users.FirstOrDefault(u => u.id == userId);
+
+            if (user != null)
+            {
+                user.Email = newEmail;
+                db.SaveChanges();
+            }
+        }
+
     }
 }
