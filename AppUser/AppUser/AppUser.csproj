@@ -114,11 +114,18 @@
     <Compile Include="AuthWindows.xaml.cs">
       <DependentUpon>AuthWindows.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CabinetAdmin.xaml.cs">
+      <DependentUpon>CabinetAdmin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="CabinetUser.xaml.cs">
       <DependentUpon>CabinetUser.xaml</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Page Include="AuthWindows.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CabinetAdmin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

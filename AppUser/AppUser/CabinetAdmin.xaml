@@ -1,10 +1,10 @@
-﻿<Window x:Class="AppUser.CabinetUser"
+﻿<Window x:Class="AppUser.CabinetAdmin"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AppUser"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+                       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="Кабинет пользователя пользователя" Height="600" Width="800" Cursor="">
     <Grid Background="#ffdadada">
@@ -14,7 +14,7 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Здравствуйте!" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 0 0 20"/>
-                <TextBlock x:Name="LoginUser" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" Margin="0 0 0 20"/>
+                <TextBox x:Name="LoginUser" materialDesign:HintAssist.Hint="" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontWeight="Bold" VerticalAlignment="Top" Margin="0 0 0 20"/>
             </StackPanel>
         </Border>
     </Grid>

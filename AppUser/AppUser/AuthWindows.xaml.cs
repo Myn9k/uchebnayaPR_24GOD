@@ -54,13 +54,21 @@ namespace AppUser
 
                 if (authUser != null)
                 {
-                    CabinetUser cabinetUser = new CabinetUser();
-                    cabinetUser.GetIdUser(authUser.id);
-                    cabinetUser.Show();
-                    this.Close();
+                    if (authUser.Pass == "Admin" && authUser.Login == "Admin")
+                    {
+                        CabinetAdmin cabinetAdmin = new CabinetAdmin();
+                        cabinetAdmin.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        CabinetUser cabinetUser = new CabinetUser();
+                        cabinetUser.GetIdUser(authUser.id);
+                        cabinetUser.Show();
+                        this.Close();
+                    }
 
                 }
-                else MessageBox.Show("Данные введены некорректно");
             }
         }
 
