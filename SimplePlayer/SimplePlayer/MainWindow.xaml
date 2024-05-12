@@ -20,7 +20,7 @@
                     <Button x:Name="ButtonStop" Width="75" Height="23" Content="Stop" Click="ButtonStop_Click"/>
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Image Source="Resources\42d899bd-d135-4ee3-9d70-dbc235a6e8a9.png" Height="25" Width="25"/>
+                    <Image Source="C:\Users\ыыыы\source\repos\SimplePlayer\SimplePlayer\Resources\42d899bd-d135-4ee3-9d70-dbc235a6e8a9.png" Height="25" Width="25"/>
                     <Slider Background="{StaticResource SliderBurdur}" x:Name="SliderSound" VerticalAlignment="Center" Width="80" Maximum="1" Minimum="0" Value="{Binding Volume, ElementName=media}" />
                 </StackPanel>
             </Grid>

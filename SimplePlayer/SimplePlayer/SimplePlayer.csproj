@@ -101,16 +101,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\42d899bd-d135-4ee3-9d70-dbc235a6e8a9.png" />
+    <None Include="Resources\42d899bd-d135-4ee3-9d70-dbc235a6e8a9.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icons8-кнопка-воспроизведения-круглая.gif" />
+    <None Include="Resources\icons8-кнопка-воспроизведения-круглая.gif" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icons8-пауза-50.png" />
+    <None Include="Resources\icons8-пауза-50.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\icons8-play-в-круге-30.png" />
+    <None Include="Resources\icons8-play-в-круге-30.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
