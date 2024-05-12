@@ -14,11 +14,9 @@ using System.Windows.Shapes;
 
 namespace AppUser
 {
-    /// <summary>
-    /// Логика взаимодействия для AuthWindows.xaml
-    /// </summary>
     public partial class AuthWindows : Window
     {
+        ApplicationContext db;
         public AuthWindows()
         {
             InitializeComponent();
@@ -28,50 +26,55 @@ namespace AppUser
         {
             string login = TextBoxLogin.Text.Trim();
             string pass1 = passbox1.Password.Trim();
+            db = new ApplicationContext();
 
-            if (login.Length < 5)
-            {
-                TextBoxLogin.ToolTip = "Это поле введено не корректно";
-                TextBoxLogin.Background = Brushes.DarkRed;
-            }
-            else if (pass1.Length < 5)
-            {
-                passbox1.ToolTip = "Это поле введено не корректно";
-                passbox1.Background = Brushes.DarkRed;
-            }
-            else
-            {
-                TextBoxLogin.ToolTip = "";
-                TextBoxLogin.Background = Brushes.Transparent;
-                passbox1.ToolTip = "";
-                passbox1.Background = Brushes.Transparent;
+            List<User> users = db.Users.ToList();
+            string strUser = "";
 
-                User authUser = null;
-                using (ApplicationContext db = new ApplicationContext())
+            foreach (User user in users)
+            {
+                if (login != user.Login)
                 {
-                    authUser = db.Users.Where(b => b.Login == login && b.Pass == pass1).FirstOrDefault();
+                    TextBoxLogin.ToolTip = "Такого Логина не существует";
+                    TextBoxLogin.Background = Brushes.DarkRed;
                 }
-
-                if (authUser != null)
+                else if (pass1 != user.Pass)
                 {
-                    if (authUser.Pass == "Admin" && authUser.Login == "Admin")
+                    passbox1.ToolTip = "Такого Пароля не существует";
+                    passbox1.Background = Brushes.DarkRed;
+                }
+                else
+                {
+                    TextBoxLogin.ToolTip = "";
+                    TextBoxLogin.Background = Brushes.Transparent;
+                    passbox1.ToolTip = "";
+                    passbox1.Background = Brushes.Transparent;
+
+                    User authUser = null;
+                    using (ApplicationContext db = new ApplicationContext())
                     {
-                        CabinetAdmin cabinetAdmin = new CabinetAdmin();
-                        cabinetAdmin.Show();
-                        this.Close();
-                    }
-                    else
-                    {
-                        CabinetUser cabinetUser = new CabinetUser();
-                        cabinetUser.GetIdUser(authUser.id);
-                        cabinetUser.Show();
-                        this.Close();
+                        authUser = db.Users.Where(b => b.Login == login && b.Pass == pass1).FirstOrDefault();
                     }
 
+                    if (authUser != null)
+                    {
+                        if (authUser.Pass == "Admin" && authUser.Login == "Admin")
+                        {
+                            CabinetAdmin cabinetAdmin = new CabinetAdmin();
+                            cabinetAdmin.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            CabinetUser cabinetUser = new CabinetUser();
+                            cabinetUser.GetIdUser(authUser.id);
+                            cabinetUser.Show();
+                            this.Close();
+                        }
+                    }
                 }
             }
         }
-
         private void Button_REG_Click(object sender, RoutedEventArgs e)
         {
             MainWindow mainWin = new MainWindow();

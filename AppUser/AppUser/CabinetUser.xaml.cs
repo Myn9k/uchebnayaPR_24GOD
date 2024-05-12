@@ -36,9 +36,8 @@ namespace AppUser
                 {
                     strUser += $"Логин: {user.Login}" + $"\n ФИО: {user.FIO}" + $"\n Почта: {user.Email}" + $"\n Дата рождения: {user.BirthdayDate}";
                 }
-                LoginUser.Text = strUser;
-
             }
+            LoginUser.Text = strUser;
         }
     }
 }

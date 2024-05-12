@@ -52,7 +52,7 @@ namespace AppUser
                 passbox2.ToolTip = "Это поле введено не корректно";
                 passbox2.Background = Brushes.DarkRed;
             }
-            else if(pass1 != pass2)
+            else if (pass1 != pass2)
             {
                 passbox2.ToolTip = "Это поле введено не корректно";
                 passbox2.Background = Brushes.DarkRed;
