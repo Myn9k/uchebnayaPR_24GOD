@@ -14,11 +14,12 @@
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Здравствуйте!" FontSize="20" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 0 0 20"/>
-                <TextBlock x:Name="LoginUser" FontSize="15" FontWeight="Bold" VerticalAlignment="Top" Margin="0 0 0 20"/>
-                <StackPanel Margin="0 20">
-                    <TextBox x:Name="NewEmailTextBox" materialDesign:HintAssist.Hint="Новая почта" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                    <Button Content="Сохранить почту" Click="SaveEmailButton_Click" HorizontalAlignment="Center"/>
-                </StackPanel>
+                <TextBox x:Name="LoginUser" IsReadOnly="True" FontSize="15" materialDesign:HintAssist.Hint="Логин" FontWeight="Bold" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="EmailUser" IsReadOnly="True" FontSize="15" FontWeight="Bold" materialDesign:HintAssist.Hint="Почта" VerticalAlignment="Top" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="NewEmailTextBox" materialDesign:HintAssist.Hint="Новая почта" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="BirthdayTextBox" IsReadOnly="True" materialDesign:HintAssist.Hint="День рождения" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <TextBox x:Name="FIOTextBox" IsReadOnly="True" materialDesign:HintAssist.Hint="ФИО" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <Button Content="Сохранить почту" Click="SaveEmailButton_Click" HorizontalAlignment="Center"/>
                 <StackPanel Margin="0 20">
                     <TextBlock Text="Дата события:"/>
                     <DatePicker x:Name="EventDatePicker" Width="200"/>
@@ -34,7 +35,10 @@
                         </DataTemplate>
                     </ListBox.ItemTemplate>
                 </ListBox>
-                <Button Content="Сохранить событие" Click="SaveEventButton_Click" HorizontalAlignment="Center" Margin="0 20"/>
+                <StackPanel Orientation="Horizontal" Margin="20">
+                    <Button Content="Сохранить событие" Click="SaveEventButton_Click" HorizontalAlignment="Left" Margin="20"/>
+                    <Button Content="Удалить" Click="DeleteEventButton_Click" HorizontalAlignment="Right" Margin="20"/>
+                </StackPanel>
             </StackPanel>
         </Border>
     </Grid>

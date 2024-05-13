@@ -8,7 +8,7 @@ using System.Data.Entity;
 
 namespace AppUser
 {
-    internal class ApplicationContext: DbContext
+    public class ApplicationContext: DbContext
     {
         public DbSet<User> Users { get; set; }
         public ApplicationContext() : base("DefaultConnection") { }

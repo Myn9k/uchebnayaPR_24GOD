@@ -29,7 +29,6 @@ namespace AppUser
             db = new ApplicationContext();
 
             List<User> users = db.Users.ToList();
-            string strUser = "";
 
             foreach (User user in users)
             {

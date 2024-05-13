@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MahApps.Metro.Controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,16 +22,17 @@ namespace AppUser
         public CabinetAdmin()
         {
             InitializeComponent();
-
             db = new ApplicationContext();
-
             List<User> users = db.Users.ToList();
-            string strUser = "";
-            foreach (User user in users)
-            {
-                strUser += $"Логин: {user.Login}" + $"\n ФИО: {user.FIO}" + $"\n Почта: {user.Email}" + $"\n Дата рождения: {user.BirthdayDate}\n";
-            }
-            LoginUser.Text = strUser;
+            DGridUSER.ItemsSource = users;
+        }
+
+
+        private void BtnEdit_click(object sender, RoutedEventArgs e)
+        {
+            User selectedUser = (sender as Button).DataContext as User;
+            EditPage editPage = new EditPage(selectedUser, db);
+            editPage.ShowDialog();
         }
     }
 }

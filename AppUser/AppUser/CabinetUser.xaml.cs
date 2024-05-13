@@ -22,16 +22,24 @@ namespace AppUser
             db = new ApplicationContext();
 
             List<User> users = db.Users.ToList();
-            string strUser = "";
+            string strLogin= "";
+            string strBirthday = "";
+            string StrEmail = "";
+            string strFIO= "";
             foreach (User user in users)
             {
                 if (user.id == id)
                 {
-                    strUser += $"Логин: {user.Login}" + $"\n ФИО: {user.FIO}" + $"\n Почта: {user.Email}" + $"\n Дата рождения: {user.BirthdayDate}";
+                    strLogin += $"{user.Login}";
+                    strFIO += $"{user.FIO}";
+                    StrEmail += $"{user.Email}";
+                    strBirthday += $"{user.BirthdayDate}";
                 }
             }
-            LoginUser.Text = strUser;
-            
+            LoginUser.Text = strLogin;
+            EmailUser.Text = StrEmail;
+            BirthdayTextBox.Text = strBirthday;
+            FIOTextBox.Text = strFIO;
         }
         public class Event
         {
@@ -81,6 +89,23 @@ namespace AppUser
             UpdateUserEmail(userId, newEmail);
             MessageBox.Show("Email адрес успешно изменен.");
         }
+        private void DeleteEventButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Получаем выбранное событие из ListBox
+            Event selectedEvent = EventsListBox.SelectedItem as Event;
+
+            if (selectedEvent != null)
+            {
+                List<Event> events = (List<Event>)EventsListBox.ItemsSource;
+                events.Remove(selectedEvent);
+
+                // Перезаписываем данные в файл
+                SaveEventsToJson(events);
+                LoadEvents();
+                MessageBox.Show("Событие удалено.");
+            }
+        }
+
 
         private void UpdateUserEmail(int userId, string newEmail)
         {
