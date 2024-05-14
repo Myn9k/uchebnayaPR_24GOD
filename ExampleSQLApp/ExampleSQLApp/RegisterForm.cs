@@ -209,5 +209,10 @@ namespace ExampleSQLApp
             this.Hide();
             loginForm.Show();
         }
+
+        private void PassBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

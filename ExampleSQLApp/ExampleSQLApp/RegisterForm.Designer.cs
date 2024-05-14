@@ -73,12 +73,14 @@
             // 
             this.PassBox.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassBox.Location = new System.Drawing.Point(71, 192);
+            this.PassBox.MaximumSize = new System.Drawing.Size(215, 46);
+            this.PassBox.MinimumSize = new System.Drawing.Size(215, 46);
             this.PassBox.Multiline = true;
             this.PassBox.Name = "PassBox";
             this.PassBox.PasswordChar = '*';
             this.PassBox.Size = new System.Drawing.Size(215, 46);
             this.PassBox.TabIndex = 10;
-            this.PassBox.UseSystemPasswordChar = true;
+            this.PassBox.TextChanged += new System.EventHandler(this.PassBox_TextChanged);
             this.PassBox.Enter += new System.EventHandler(this.PassBox_Enter);
             this.PassBox.Leave += new System.EventHandler(this.PassBox_Leave);
             // 

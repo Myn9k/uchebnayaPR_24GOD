@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auto_parts_warehouse", "Auto_parts_warehouse\Auto_parts_warehouse.csproj", "{35F874A4-1E7A-47B4-B138-1C2F2F67B0FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{35F874A4-1E7A-47B4-B138-1C2F2F67B0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35F874A4-1E7A-47B4-B138-1C2F2F67B0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35F874A4-1E7A-47B4-B138-1C2F2F67B0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35F874A4-1E7A-47B4-B138-1C2F2F67B0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0854684F-8877-4ED9-9239-FC33835A20C9}
+	EndGlobalSection
+EndGlobal

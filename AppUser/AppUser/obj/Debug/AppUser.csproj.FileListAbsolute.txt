@@ -130,3 +130,5 @@ C:\Users\у\Desktop\AppUser\AppUser\obj\Debug\CabinetAdmin.baml
 C:\Users\у\Desktop\AppUser\AppUser\obj\Debug\CabinetUser.baml
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\EditPage.g.cs
 D:\sort\repozitor\uchebnayaPR_24GOD\AppUser\AppUser\obj\Debug\EditPage.baml
+C:\Users\у\Desktop\AppUser\AppUser\obj\Debug\EditPage.g.cs
+C:\Users\у\Desktop\AppUser\AppUser\obj\Debug\EditPage.baml

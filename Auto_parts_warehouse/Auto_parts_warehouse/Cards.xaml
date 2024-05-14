@@ -1,0 +1,25 @@
+﻿<Window x:Class="Auto_parts_warehouse.Cards"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Auto_parts_warehouse"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="Cards" Width="400" Height="400" Background="{DynamicResource MaterialDesignPaper}" TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+    <materialDesign:Card Width="200" Style="{StaticResource MaterialDesignOutlinedCard}" TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Image Width="196" Height="140" Source="\Images\IMG_9008.jpg" Stretch="Fill"/>
+            <StackPanel Grid.Row="1" Margin="8,24,8,0">
+                <TextBlock HorizontalAlignment="Center" FontWeight="Bold" Text="Название"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="ОПИСАНИЕ НАСТОЛЬКО КРУТОЕ ЧТО МНЕ ЛЕНЬ ЕГО ПРИДУМЫВАТЬ!!!" TextWrapping="Wrap" />
+            </StackPanel>
+            <Button Grid.Row="2" Content="Купить"/>
+        </Grid>
+    </materialDesign:Card>
+</Window>
