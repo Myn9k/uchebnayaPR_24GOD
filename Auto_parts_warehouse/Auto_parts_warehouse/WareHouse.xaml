@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:Auto_parts_warehouse"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Topmost="True"
-        Title="WareHouse" Height="600" Width="800" Background="{DynamicResource MaterialDesignPaper}" TextElement.Foreground="{DynamicResource MaterialDesignBody}">
-    <materialDesign:DrawerHost x:Name="DrawerHost" Width="800" Height="550" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" >
+        Title="WareHouse" Height="650" Width="850" Background="{DynamicResource MaterialDesignPaper}" TextElement.Foreground="{DynamicResource MaterialDesignBody}">
+    <materialDesign:DrawerHost x:Name="DrawerHost" Width="850" Height="600" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" >
         <materialDesign:DrawerHost.Style>
             <Style TargetType="materialDesign:DrawerHost" BasedOn="{StaticResource {x:Type materialDesign:DrawerHost}}"  >
                 <Style.Triggers>
@@ -19,25 +18,26 @@
             </Style>
         </materialDesign:DrawerHost.Style>
         <materialDesign:DrawerHost.LeftDrawerContent>
-            <StackPanel Width="150">
-                <Button Grid.Row="0" Grid.Column="0" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Content="{materialDesign:PackIcon Kind=About}" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand"/>
+            <StackPanel Width="180">
+                <StackPanel Orientation="Horizontal">
+                    <Button Grid.Row="0" Grid.Column="0" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Content="{materialDesign:PackIcon Kind=About}" HorizontalAlignment="Left" VerticalAlignment="Top" Cursor="Hand"/>
+                    <Button Foreground="White" Content="Back" Name="BtnBack" Width="112" HorizontalAlignment="Right" Click="BtnBack_click" Margin="0,0,10,10" FontSize="20"/>
+                </StackPanel>
                 <TextBlock Margin="4" HorizontalAlignment="Center" Text="Навигация" />
-                <Button Margin="4" HorizontalAlignment="Center" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Content="CLOSE THIS" Style="{StaticResource MaterialDesignFlatButton}" />
-                <Button Margin="4" HorizontalAlignment="Center" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" Content="CLOSE ALL" Style="{StaticResource MaterialDesignFlatButton}" />
+                <TextBlock x:Name="LoginName" Margin="4" HorizontalAlignment="Center" Foreground="White" Text=""/>
+                <Button x:Name="Shop" Click="Shop_Click"  Margin="4" HorizontalAlignment="Center" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Content="Посмотреть товары" Style="{StaticResource MaterialDesignFlatButton}" />
+                <Button x:Name="AdminPanel" Click="AdminPanel_Click" Margin="4" HorizontalAlignment="Center" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" Content="Админ панель" Style="{StaticResource MaterialDesignFlatButton}" Visibility="Hidden"/>
+                <Button x:Name="MenagerPanel" Click="MenagerPanel_Click" Margin="4" HorizontalAlignment="Center" Command="{x:Static materialDesign:DrawerHost.CloseDrawerCommand}" Content="Менеджер панель" Style="{StaticResource MaterialDesignFlatButton}"  Visibility="Hidden"/>
             </StackPanel>
         </materialDesign:DrawerHost.LeftDrawerContent>
         <Grid>
             <Button Grid.Row="0" Grid.Column="0" Command="{x:Static materialDesign:DrawerHost.OpenDrawerCommand}" CommandParameter="{x:Static Dock.Left}" Content="{materialDesign:PackIcon Kind=About}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Frame NavigationUIVisibility="Hidden" ContentRendered="MainFrame_ContentRendered"  Grid.Row="1" Name="MainFrame"/>
             <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition />
-                <RowDefinition />
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="5"/>
             </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
         </Grid>
     </materialDesign:DrawerHost>
 </Window>

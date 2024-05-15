@@ -17,8 +17,7 @@ namespace Auto_parts_warehouse
 {
     public partial class MainWindow : Window
     {
-        Cards cards = new Cards();
-        WareHouse wareHouse = new WareHouse();
+        ApplicationContext db;
         public MainWindow()
         {
             InitializeComponent();
@@ -26,8 +25,53 @@ namespace Auto_parts_warehouse
 
         private void Button_Auth_Click(object sender, RoutedEventArgs e)
         {
-            cards.Show();
-            wareHouse.Show();
+
+            WareHouse wareHouse;
+            string login = TextBoxLogin.Text.Trim();
+            string pass1 = passbox1.Password.Trim();
+            db = new ApplicationContext();
+
+            List<User> users = db.Users.ToList();
+
+            foreach (User user in users)
+            {
+                if (login != user.Login)
+                {
+                    TextBoxLogin.ToolTip = "Такого Логина не существует";
+                    TextBoxLogin.Background = Brushes.DarkRed;
+                }
+                else if (pass1 != user.Pass)
+                {
+                    passbox1.ToolTip = "Такого Пароля не существует";
+                    passbox1.Background = Brushes.DarkRed;
+                }
+                else
+                {
+                    TextBoxLogin.ToolTip = "";
+                    TextBoxLogin.Background = Brushes.Transparent;
+                    passbox1.ToolTip = "";
+                    passbox1.Background = Brushes.Transparent;
+
+                    User authUser = null;
+                    using (ApplicationContext db = new ApplicationContext())
+                    {
+                        authUser = db.Users.Where(b => b.Login == login && b.Pass == pass1).FirstOrDefault();
+                    }
+
+                    if (authUser != null)
+                    {
+                        wareHouse = new WareHouse()
+                        {
+                            Roots_ID = authUser.Root_id,
+                            User_ID = authUser.id
+                        };
+                        wareHouse.GetIdUser(authUser.id);
+                        wareHouse.GetRootIdUser(authUser.Root_id);
+                        wareHouse.Show();
+                        this.Close();
+                    }
+                }
+            }
         }
     }
 }

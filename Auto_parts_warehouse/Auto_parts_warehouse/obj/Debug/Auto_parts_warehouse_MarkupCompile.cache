@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\sort\repozitor\Auto_parts_warehouse\Auto_parts_warehouse\obj\Debug\
+D:\sort\repozitor\uchebnayaPR_24GOD\Auto_parts_warehouse\Auto_parts_warehouse\obj\Debug\
 Auto_parts_warehouse
 none
 false
 DEBUG;TRACE
-D:\sort\repozitor\Auto_parts_warehouse\Auto_parts_warehouse\App.xaml
-3-935736591
+D:\sort\repozitor\uchebnayaPR_24GOD\Auto_parts_warehouse\Auto_parts_warehouse\App.xaml
+7-1418237539
 
-7-1853377499
-241886190411
-Cards.xaml;MainWindow.xaml;WareHouse.xaml;
+152064024749
+29738904399
+AddPage.xaml;AdminPage.xaml;CardsPage.xaml;EditPage.xaml;MainWindow.xaml;ManagerPage.xaml;WareHouse.xaml;
 
 False
 

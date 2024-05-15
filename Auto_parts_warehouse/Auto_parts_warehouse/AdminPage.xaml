@@ -1,0 +1,21 @@
+﻿<Page x:Class="Auto_parts_warehouse.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Auto_parts_warehouse"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="700" TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+      Title="AdminPage">
+    <Grid>
+        <StackPanel>
+            <TextBlock Text="Права доступа: 1-обычный пользователь" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" Margin="0 0 0 10"/>
+            <TextBlock Text="Права доступа: 2-Менеджер 3-Админ" FontSize="30" FontWeight="Bold" VerticalAlignment="Top" Margin="0 0 0 10"/>
+            <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
+            <TextBox x:Name="passbox1" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 0"/>
+            <TextBox x:Name="rootbox" materialDesign:HintAssist.Hint="Права" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="10 0 0 10"/>
+            <Button Content="Зарегистрировать" Margin="10 0 0 20" Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
