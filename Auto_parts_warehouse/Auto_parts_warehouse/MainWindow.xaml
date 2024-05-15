@@ -15,7 +15,8 @@
             <StackPanel>
                 <TextBlock Text="Авторизация" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 0 0 20"/>
                 <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox x:Name="passbox1" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Margin="0 0 0 20"/>
+                <PasswordBox x:Name="passbox1" materialDesign:HintAssist.Hint="Введите пароль" materialDesign:TextFieldAssist.HasClearButton="True"
+                Style="{StaticResource MaterialDesignRevealPasswordBox}" Margin="0 0 0 20" />
                 <Grid>
                     <Button x:Name="AuthBTN" materialDesign:ButtonAssist.CornerRadius="20"
                         IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, 
