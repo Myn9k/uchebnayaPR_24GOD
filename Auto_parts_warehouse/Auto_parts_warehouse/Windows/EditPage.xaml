@@ -18,7 +18,7 @@
         <TextBox Text="{Binding Title}" materialDesign:HintAssist.Hint="Название" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
         <TextBox Text="{Binding Description}" Grid.Row="1" materialDesign:HintAssist.Hint="Описание" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
         <TextBox x:Name="ImagesBox" Text="{Binding Image}" Grid.Row="2" materialDesign:HintAssist.Hint="Ссылка на фотку" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-        <Button Content="Выбрать изображение" Grid.Row="2" HorizontalAlignment="Right" Click="ChooseImage_Click"/>
+        <Button Content="{materialDesign:PackIcon Kind=Download}" Grid.Row="2" HorizontalAlignment="Right" Click="ChooseImage_Click"/>
         <TextBox Text="{Binding Price}" Grid.Row="3" materialDesign:HintAssist.Hint="Цена" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
         <Button Foreground="White" Content="Сохранить" Grid.Row="4" Name="BtnSave" Click="BtnSave_click" Width="Auto"/>
     </Grid>

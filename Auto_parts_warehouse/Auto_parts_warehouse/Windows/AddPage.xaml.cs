@@ -80,7 +80,7 @@ namespace Auto_parts_warehouse.Windows
         private void ChooseImage_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = @"D:\sort\repozitor\uchebnayaPR_24GOD\Auto_parts_warehouse\Auto_parts_warehouse\Images\"; // Путь к папке с изображениями
+            openFileDialog.InitialDirectory = @""; // Путь к папке с изображениями
             openFileDialog.Filter = "Image Files (*.jpg, *.jpeg, *.png)|*.jpg; *.jpeg; *.png|All Files (*.*)|*.*";
 
             if (openFileDialog.ShowDialog() == true)
